@@ -10,7 +10,10 @@ const productSchema = new Schema(
         description: {
             type: String,
             required: true,
-        }
+        },
+        likes: {
+            type: Number,
+        },
     },
     {
         toJSON: {
@@ -19,6 +22,12 @@ const productSchema = new Schema(
         id: false,
     }
 );
+
+productSchema
+    .virtual('likesCount')
+    .get(function() {
+        return this.likes
+    })
 
 const Product = model('Product', productSchema);
 

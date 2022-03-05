@@ -1,0 +1,24 @@
+{
+  "name": "flora",
+  "version": "1.0.0",
+  "description": "A web application offering a flower delivery service.",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/PentaZoned/flora.git"
+  },
+  "author": "Baofeng Guo, Courtney Foster, Hing Man Tsang, Bradley Le, Scott Everett",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/PentaZoned/flora/issues"
+  },
+  "homepage": "https://github.com/PentaZoned/flora#readme",
+  "dependencies": {
+    "express": "^4.17.3",
+    "mongoose": "^6.2.4"
+  }
+}
