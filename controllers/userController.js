@@ -56,6 +56,23 @@ module.exports = {
             .catch((err) => res.status(500).json(err));
     },
 
+      // Add product to cart
+      addToCart(req, res) {
+        User.findOneAndUpdate(
+            {_id: req.params.userId},
+            { $addToSet: { cart: req.params.productId } },
+            { runValidators: true, new: true }
+        )
+        .then((user) => {
+            if (!user) {
+                res.status(404).json({ message: 'No user found with that ID' });
+                return;
+            }
+            res.json(user);
+        })
+        .catch(err => res.json(err));
+    },
+
 
 
 };

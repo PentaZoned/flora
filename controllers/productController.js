@@ -1,4 +1,4 @@
-const { Product } = require('../models');
+const { Product, User } = require('../models');
 
 module.exports = {
     // Get all products
@@ -17,7 +17,9 @@ module.exports = {
             ? res.status(404).json({ message: 'No product with that ID'})
             : res.json(product))
             .catch(err => res.status(500).json(err));
-    }
+    },
+
+  
 }
 
 
