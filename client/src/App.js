@@ -24,9 +24,13 @@ import Spin from "./components/pages/Spin";
 
 //modified the following:
 //import Home from "./components/Home/Home";
-=======
+
 //put other website components here
 
+
+import NotFound from './pages/NotFound';
+
+import Footer from "./components/Footer";
 
 function App() {
   const navigate = useNavigate();
