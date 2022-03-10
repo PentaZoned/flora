@@ -57,10 +57,26 @@ module.exports = {
     },
 
       // Add product to cart
-      addToCart(req, res) {
+    //   addToCart(req, res) {
+    //     User.findOneAndUpdate(
+    //         {_id: req.params.userId},
+    //         { $addToSet: { cart: req.body } },
+    //         { runValidators: true, new: true }
+    //     )
+    //     .then((user) => {
+    //         if (!user) {
+    //             res.status(404).json({ message: 'No user found with that ID' });
+    //             return;
+    //         }
+    //         res.json(user);
+    //     })
+    //     .catch(err => res.json(err));
+    // },
+
+    addOrder(req, res) {
         User.findOneAndUpdate(
             {_id: req.params.userId},
-            { $addToSet: { cart: req.body } },
+            { $addToSet: { orders: req.body } },
             { runValidators: true, new: true }
         )
         .then((user) => {
@@ -72,34 +88,6 @@ module.exports = {
         })
         .catch(err => res.json(err));
     },
-
-    // addToCart(req, res) {
-    //     User.findOne({ _id: req.params.userId })
-    //     .select('-__v')
-    //     .then((user) => {
-    //         if (!user.cart.length) {
-    //             Cart.create(req.body)
-    //             .then((cart) => res.json(cart))
-    //             .catch((err) => {
-    //                 console.log(err);
-    //                 res.status(500).json(err);
-    //             });
-
-    //             User.findOneAndUpdate(
-    //                 { _id: req.params.userId },
-    //                 { $addToSet: { cart: req.params.productId }},
-    //                 { runValidators: true, new: true }
-    //             )
-    //             .then((user) => {
-    //                 if (!user) {
-    //                     res.status(404).json({ message: 'No user with that ID' });
-    //                 }
-    //             })
-    //         }
-
-
-    //     })
-    // },
 
     removeFromCart(req, res) {
         User.findOneAndUpdate(

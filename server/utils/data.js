@@ -1,21 +1,24 @@
 const products = [
     {
-        title: "Tuberose Boquet",
-        description: "A lovely boquet of tuberoses complimented by eucalyptus leaves.",
-        likes: "112",
+        title: "Glorius Gladioli",
+        description: "A lovely boquet of Stephens favorite.",
+        category: 'Gladioli',
         price: 12.99,
+        likes: "112",
     },
     {
-        title: "White Roses",
-        description: "A lovely boquet of white roses.",
-        likes: "96",
-        price: 15.99,
+        title: "Spring is the Cruelest Season",
+        description: "Smart arrangements of mixed selections of complimentary flowers.",
+        category: 'Mixed Bouqets',
+        price: 12.99,
+        likes: "112",
     },
     {
-        title: "Carnations",
-        description: "A lovely boquet of mixed carnations.",
-        likes: "76",
-        price: 13.99,
+        title: "The Kansas Special",
+        description: "Ten cheerful, golden sunflowers that instantly brighten any room.",
+        category: 'Sunflowers',
+        price: 12.99,
+        likes: "112",
     },
 ];
 

@@ -4,7 +4,7 @@ const {
     getSingleUser,
     createUser,
     deleteUser,
-    addToCart,
+    addOrder,
     removeFromCart
 } = require('../../controllers/userController');
 
@@ -15,6 +15,6 @@ router.route('/').get(getUsers).post(createUser);
 router.route('/:userId').get(getSingleUser).delete(deleteUser);
 
 // /api/users/:userId/products/:productId
-router.route('/:userId/products/:productId').put(addToCart).delete(removeFromCart);
+router.route('/:userId/products/:productId').put(addOrder).delete(removeFromCart);
 
 module.exports = router;
