@@ -11,6 +11,15 @@ const productSchema = new Schema(
             type: String,
             required: true,
         },
+        price: {
+            type: Number,
+            required: true,
+        },
+        category: {
+            type: Schema.Types.ObjectId,
+            ref: 'Category',
+            required: true,
+        },
         likes: {
             type: Number,
         },
@@ -23,11 +32,6 @@ const productSchema = new Schema(
     }
 );
 
-productSchema
-    .virtual('likesCount')
-    .get(function() {
-        return this.likes
-    })
 
 const Product = model('Product', productSchema);
 
