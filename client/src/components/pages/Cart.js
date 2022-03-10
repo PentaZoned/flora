@@ -99,6 +99,13 @@ const Cart = () => {
     >
       <Grid container spacing={5}>
         <Grid item>
+            {state.cart.length ? (
+                <div>
+                    {state.cart.map((item) => (
+                        <CartItem key={item._id} item={item} />
+                    ))}
+                </div>
+            //)}
           <ButtonBase sx={{ width: 128, height: 128 }}>
             <Img alt="flower" src={img} />
           </ButtonBase>
