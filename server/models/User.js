@@ -1,6 +1,6 @@
 const { Schema, model } = require('mongoose');
 // const cartSchema = require('./Cart');
-
+const bcrypt = require('bcrypt');
 
 // Schema for User model
 const userSchema = new Schema(
@@ -40,6 +40,15 @@ const userSchema = new Schema(
         id: false,
     }
 );
+
+userSchema.pre('save', async function(next) {
+    if(this.isNew || this.isModified('password')) {
+        const saltRounds = 10;
+        this.password = await bcrypt.hash(this.password, saltRounds);
+    }
+
+    next();
+})
 
 userSchema
     .virtual('orderCount')
