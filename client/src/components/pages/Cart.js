@@ -28,7 +28,7 @@ const Cart = () => {
     //         });
     //     }
     // }, [data]);
-
+//hi
     //if we use idb:
     useEffect(() => {
         async function getCart() {
