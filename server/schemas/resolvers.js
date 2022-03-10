@@ -1,3 +1,4 @@
+const { AuthenticationError } = require('apollo-server-express');
 const { ResetTvOutlined } = require('@mui/icons-material');
 const { User, Product, Category, Order } = require('../models');
 const { signToken } = require('../utils/auth');
@@ -36,6 +37,16 @@ const resolvers = {
             const token = signToken(user);
 
             return { token, user };
+        },
+        addOrder: async (_parent, { products }, context) => {
+
+            if (context.user) {
+                const order = await Order.create({ products });
+                await User.findByIdAndUpdate(context.user._id, { $push: { orders: order } });
+                return order;
+            }
+
+            throw new AuthenticationError('Not logged in');
         }
     }
 };
