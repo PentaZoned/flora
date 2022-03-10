@@ -9,6 +9,8 @@ import Navbar from "./components/Navbar";
 import Home from "./components/Home/Home";
 //put other website components here
 
+import NotFound from './pages/NotFound';
+
 import Footer from "./components/Footer";
 
 function App() {
@@ -33,6 +35,8 @@ function App() {
     <Switch>
       <Route path="/" exact component={Home} />
        {/* put the navbar items here*/}
+
+      <Route path="*" element={NotFound}/>
 
     </Switch>
     <Footer />
