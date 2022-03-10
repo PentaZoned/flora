@@ -1,8 +1,20 @@
 const { Schema, model } = require('mongoose');
+// const cartSchema = require('./Cart');
+
 
 // Schema for User model
 const userSchema = new Schema(
     {
+        firstName: {
+            type: String,
+            required: true,
+            trim: true,
+        },
+        lastName: {
+            type: String,
+            required: true,
+            trim: true,
+        },
         email: {
             type: String,
             unique: true,
@@ -14,10 +26,10 @@ const userSchema = new Schema(
             unique: true,
 
         },
-        cart: [
+        orders: [
             {
                 type:  Schema.Types.ObjectId,
-                ref: 'Product',
+                ref: 'Order',
             }
         ]
     },
@@ -30,9 +42,9 @@ const userSchema = new Schema(
 );
 
 userSchema
-    .virtual('cartCount')
+    .virtual('orderCount')
     .get(function() {
-        return this.cart.length;
+        return this.orders.length;
     });
 
 const User  = model('User', userSchema);

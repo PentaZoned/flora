@@ -73,6 +73,49 @@ module.exports = {
         .catch(err => res.json(err));
     },
 
+    // addToCart(req, res) {
+    //     User.findOne({ _id: req.params.userId })
+    //     .select('-__v')
+    //     .then((user) => {
+    //         if (!user.cart.length) {
+    //             Cart.create(req.body)
+    //             .then((cart) => res.json(cart))
+    //             .catch((err) => {
+    //                 console.log(err);
+    //                 res.status(500).json(err);
+    //             });
+
+    //             User.findOneAndUpdate(
+    //                 { _id: req.params.userId },
+    //                 { $addToSet: { cart: req.params.productId }},
+    //                 { runValidators: true, new: true }
+    //             )
+    //             .then((user) => {
+    //                 if (!user) {
+    //                     res.status(404).json({ message: 'No user with that ID' });
+    //                 }
+    //             })
+    //         }
+
+
+    //     })
+    // },
+
+    removeFromCart(req, res) {
+        User.findOneAndUpdate(
+            { _id: req.params.userId },
+            { $pull: { cart: { productId: req.body.productId }}},
+            {runValidators: true, new: true }
+        )
+        .then((user) => {
+            if (!user) {
+                res.status(404).json({ message: 'No user with this ID' });
+            }
+            res.json({ message: 'Item removed from cart' });
+        })
+        .catch(err => res.status(500).json(err));
+    }
+
 
 
 };
