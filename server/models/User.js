@@ -23,8 +23,8 @@ const userSchema = new Schema(
         },
         password: {
             type: String,
-            unique: true,
-            required: true
+            required: true,
+            minlength: 5
         },
         orders: [
             {
@@ -49,6 +49,10 @@ userSchema.pre('save', async function(next) {
 
     next();
 })
+
+userSchema.methods.isCorrectPassword = async function(password) {
+    return await bcrypt.compare(password, this.password);
+};
 
 userSchema
     .virtual('orderCount')
