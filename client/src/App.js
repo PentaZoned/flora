@@ -5,25 +5,24 @@ import './App.css';
 import Preloader from "../src/components/Preloader";
 
 import { Routes, Route, useNavigate } from "react-router-dom";
-//import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-
-=======
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 
 
 //website components
 import Navbar from "./components/Navbar";
-import Home from "./components/pages/Home";
+import Footer from './components/Footer';
 
+//website pages
+import Home from "./components/pages/Home";
 import Cart from "./components/pages/Cart";
 import Contact from "./components/pages/Contact";
 import Spin from "./components/pages/Spin";
 // import Login from './components/pages/Login';
 // import Signup from './components/pages/Signup';
-//import Footer from "./components/Footer";
 
-//modified the following:
-//import Home from "./components/Home/Home";
+
+
+
 
 //put other website components here
 
@@ -51,6 +50,7 @@ function App() {
 
   return (
 
+    <Router>
     <div>
     <Preloader load={load} />
     <div className="App" id={load ? "no-scroll" : "scroll"}>
@@ -69,6 +69,7 @@ function App() {
       {/* <Footer /> */}
     </div>
     </div>
+    </Router>
   );
   }
 
