@@ -3,13 +3,18 @@ import flowers from "./flowers";
 //import logo here
 import './App.css';
 import Preloader from "../src/components/Preloader";
+
 import { Routes, Route, useNavigate } from "react-router-dom";
 //import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+
+=======
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 
 
 //website components
 import Navbar from "./components/Navbar";
 import Home from "./components/pages/Home";
+
 import Cart from "./components/pages/Cart";
 import Contact from "./components/pages/Contact";
 import Spin from "./components/pages/Spin";
@@ -19,6 +24,8 @@ import Spin from "./components/pages/Spin";
 
 //modified the following:
 //import Home from "./components/Home/Home";
+=======
+//put other website components here
 
 
 function App() {
@@ -29,7 +36,7 @@ function App() {
   useEffect(() => {
     const timer = setTimeout(() => {
       upadateLoad(false);
-    }, 1200);
+    }, 2000);
     
     return () => clearTimeout(timer);
   }, []);
@@ -39,6 +46,7 @@ function App() {
   }
 
   return (
+
     <div>
     <Preloader load={load} />
     <div className="App" id={load ? "no-scroll" : "scroll"}>
@@ -59,5 +67,6 @@ function App() {
     </div>
   );
   }
+
 
 export default App;
