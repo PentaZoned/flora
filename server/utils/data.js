@@ -17,6 +17,39 @@ const products = [
         likes: "76",
         price: 13.99,
     },
-]
+];
 
-module.exports = products;
+const users = [
+    {
+        firstName: 'Leo',
+        lastName: 'Lionni',
+        email: 'frederick@aol.com',
+        password: '4fieldMice',
+    },
+    {
+        firstName: 'Fyodor',
+        lastName: 'Dostoevski',
+        email: 'theidot@hotmail.com',
+        password: 'AmICancelled?',
+    },
+    {
+        firstName: 'Rocket',
+        lastName: 'Power',
+        email: 'oceanshoresrealty@gmail.com',
+        password: 'NoShoobies!'
+    }
+];
+
+const categories = [
+    {
+        name: 'Gladioli',
+    },
+    {
+        name: 'Mixed Bouqets',
+    },
+    {
+        name: 'Sunflowers',
+    }
+];
+
+module.exports = { products, users, categories };
