@@ -15,7 +15,7 @@ const products = [
     },
     {
         title: "The Kansas Special",
-        description: "Ten cheerful, golden sunflowers that instantly brighten any room.",
+        description: "Ten cheerful, golden s that instantly brighten any room.",
         category: 'Sunflowers',
         price: 12.99,
         likes: "112",
