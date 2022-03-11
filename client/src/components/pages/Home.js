@@ -7,11 +7,17 @@ import Stack from '@mui/material/Stack';
 import ImageList from '@mui/material/ImageList';
 import ImageListItem from '@mui/material/ImageListItem';
 import ImageListItemBar from '@mui/material/ImageListItemBar';
+import Navbar from '../Navbar';
+//import { products } from './server/seeds/data';
+import img from "../../images/BF167-11KM_R.jpg"
 
-export default function FlowerCard({flowers}) {
+//data.js needs to add an image path
+
+export default function FlowerCard({products}) {
   const classes = useStyles();
   return (
     <main>
+        <Navbar />
       <div>
         <Link to ="/">
         <div align="center">
@@ -22,16 +28,19 @@ export default function FlowerCard({flowers}) {
       <div>
       <Container>
         <ImageList className={classes.imagelist} gap={30}>
-          {flowers.map((item) => (
-            <ImageListItem key={item.name.image}>
-              <img
+          {products.map((item) => (
+            <ImageListItem key={img}>
+                <img 
+                    src={img}
+                />
+              {/* <img
                 src={item.name.image}
                 srcSet={item.name.image}
                 alt={item.name.description}
                 loading="lazy"
-              />
+              /> */}
               <ImageListItemBar
-                title={<div>{item.name.title}</div>}
+                title={<div>{item.title}</div>}
                 position="below"
               />
               <Stack direction="row" >
@@ -40,7 +49,7 @@ export default function FlowerCard({flowers}) {
                   variant="contained"
                   // onClick={event => window.open(flower.id)}
                   >
-                    Buy This
+                    Add to cart
                 </Button>
               </Stack>
             </ImageListItem>
