@@ -4,13 +4,14 @@ import React, { useState, useEffect } from "react";
 import './App.css';
 import Preloader from "../src/components/Preloader";
 
-//import { Routes, Route, useNavigate } from "react-router-dom";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 
 
 //website components
+
 import Navbar from "./components/Navbar";
-//import Footer from './components/Footer';
+// import Footer from './components/Footer';
+
 
 //website pages
 import Home from "./components/pages/Home";
