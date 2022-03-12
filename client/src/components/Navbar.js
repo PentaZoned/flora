@@ -12,10 +12,6 @@ const pages = [
         pageURL: "/Cart",
     },
     {
-        pageTitle: "Contact",
-        pageURL: "/Contact",
-    },
-    {
         pageTitle: "Spin",
         pageURL: "/Spin",
     },
