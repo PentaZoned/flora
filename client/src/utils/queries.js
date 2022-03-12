@@ -8,8 +8,8 @@ export const QUERY_PRODUCTS = gql`
         likes
     }
 `;
-//To Do: add quantity in query_all_products
-//and also in typeDefs.js file
+
+//TO DO: Add quantity typeDefs.js file
 export const QUERY_ALL_PRODUCTS = gql`
     {
         products {
@@ -18,6 +18,37 @@ export const QUERY_ALL_PRODUCTS = gql`
             description
             price
             likes
+            quantity
+        }
+    }
+`;
+
+export const QUERY_CATEGORIES = gql`
+    {
+        categories{
+            _id
+            name
+        }
+    }
+`;
+//TO DO: Add quantity and image to typeDefs.js
+export const QUERY_USER = gql`
+    {
+        user {
+            firstName
+            lastName
+            orders {
+                _id
+                purchaseDate
+                products {
+                    _id
+                    title
+                    description
+                    price
+                    quantity
+                    image
+                }
+            }
         }
     }
 `;
