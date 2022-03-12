@@ -3,15 +3,18 @@ import React, { useState, useEffect } from "react";
 //import logo here
 import './App.css';
 import Preloader from "../src/components/Preloader";
+
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+
 import { 
   ApolloClient,
   InMemoryCache,
   ApolloProvider,
   createHttpLink 
 } from "@apollo/client";
-import { setContext } from '@apollo/client/link/context'
+import { setContext } from 'apollo-link-context';
 
-import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+
 
 
 //website components
@@ -29,15 +32,6 @@ import Home from "./components/pages/Home";
 // import Signup from './components/pages/Signup';
 
 
-
-
-
-//put other website components here
-
-
-// import NotFound from './pages/NotFound';
-
-// import Footer from "./components/Footer";
 const httpLink = createHttpLink({
   uri: "/graphql"
 });
@@ -59,6 +53,15 @@ const client = new ApolloClient({
 
 
 
+//put other website components here
+
+
+// import NotFound from './pages/NotFound';
+
+// import Footer from "./components/Footer";
+
+
+
 
 function App() {
   // const navigate = useNavigate();
@@ -74,7 +77,7 @@ function App() {
   }, []);
 
   // const handlePageChange = (pageURL) => {
-  //   navigate(pageURL);
+    //   navigate(pageURL);
   // }
 
   return (
@@ -87,7 +90,7 @@ function App() {
         <Route path="/" element={<Home/>} />
         {/* <Route path="/Cart" element={<Cart/>} />
         <Route path="/Contact" element={<Contact/>} />
-        <Route path="/Spin" element={<Spin/>}/> */}
+      <Route path="/Spin" element={<Spin/>}/> */}
         {/* <Route path="/flowers/:id" element={<Detail />} */}
         {/* <Route path="/login" element={<Login />}/> */}
         {/* <Route path="/signup" element={<Signup />}/>*/}
@@ -97,7 +100,7 @@ function App() {
     </div>
     </div>
     </ApolloProvider>
-  );
+ );
   }
 
 
