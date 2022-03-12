@@ -19,6 +19,14 @@ const pages = [
         pageTitle: "Spin",
         pageURL: "/Spin",
     },
+    {
+        pageTitle: "Signup",
+        pageURL: "/Signup",
+    },
+    {
+        pageTitle: "Login",
+        pageURL: "/Login",
+    },
 ];
 
 const Navbar = (props) => {

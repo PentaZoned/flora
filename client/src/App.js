@@ -8,6 +8,8 @@ import { setContext } from 'apollo-link-context';
 
 //WEBSITE COMPONENTS
 import Navbar from "./components/Navbar";
+import Login from './components/pages/Login';
+import Signup from './components/pages/Signup';
 // import Footer from './components/Footer';
 // import flowers from "./flowers";
 // import Footer from "./components/Footer";
@@ -45,17 +47,7 @@ const client = new ApolloClient({
 
 
 function App() {
-  // const navigate = useNavigate();
-  // preloader
-  const [load, upadateLoad] = useState(true);
 
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      upadateLoad(false);
-    }, 2000);
-
-    return () => clearTimeout(timer);
-  }, []);
 
   // const handlePageChange = (pageURL) => {
   //   navigate(pageURL);
@@ -64,20 +56,19 @@ function App() {
   return (
     <ApolloProvider client={client}>
       <div>
-        <Preloader load={load} />
-        <div className="App" id={load ? "no-scroll" : "scroll"}>
+      <Router>
+        <div>
           <Navbar />
           <Routes>
             <Route path="/" element={<Home />} />
             {/* <Route path="/Cart" element={<Cart/>} />
-        <Route path="/Contact" element={<Contact/>} />
       <Route path="/Spin" element={<Spin/>}/> */}
             {/* <Route path="/flowers/:id" element={<Detail />} */}
-            {/* <Route path="/login" element={<Login />}/> */}
-            {/* <Route path="/signup" element={<Signup />}/>*/}
+            <Route path="/login" element={<Login />}/>
+            <Route path="/signup" element={<Signup />}/>
           </Routes>
-          {/* <Footer /> */}
         </div>
+        </Router>
       </div>
     </ApolloProvider>
   );
