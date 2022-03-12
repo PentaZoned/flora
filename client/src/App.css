@@ -17,7 +17,7 @@
   height: 100%;
   background-image: url(images/sunflower.png);
   z-index: 999999;
-  background-image: url(client/src/images/sunflower.png);
+  background-image: url(images/sunflower.png);
   background-color: #0c0513;
   background-repeat: no-repeat;
   background-position: center;
