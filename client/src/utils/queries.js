@@ -1,11 +1,14 @@
 import { gql } from '@appolo/client';
 
+//TO DO: Add quantity and image in typeDefs.js
 export const QUERY_PRODUCTS = gql`
     query getProducts($product: ID) {
         title
         description
         price
         likes
+        quantity
+        image
     }
 `;
 
@@ -23,6 +26,14 @@ export const QUERY_ALL_PRODUCTS = gql`
     }
 `;
 
+export const QUERY_CHECKOUT = gql`
+    query getCheckout($products: [ID]!){
+        checkout(products: $products) {
+            session
+        }
+    }
+`;
+
 export const QUERY_CATEGORIES = gql`
     {
         categories{
@@ -31,6 +42,7 @@ export const QUERY_CATEGORIES = gql`
         }
     }
 `;
+
 //TO DO: Add quantity and image to typeDefs.js
 export const QUERY_USER = gql`
     {
