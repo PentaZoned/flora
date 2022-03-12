@@ -3,6 +3,13 @@ import React, { useState, useEffect } from "react";
 //import logo here
 import './App.css';
 import Preloader from "../src/components/Preloader";
+import { 
+  ApolloClient,
+  InMemoryCache,
+  ApolloProvider,
+  createHttpLink 
+} from "@apollo/client";
+import { setContext } from '@apollo/client/link/context'
 
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 
@@ -31,6 +38,27 @@ import Home from "./components/pages/Home";
 // import NotFound from './pages/NotFound';
 
 // import Footer from "./components/Footer";
+const httpLink = createHttpLink({
+  uri: "/graphql"
+});
+
+const authLink = setContext((_, {headers}) => {
+  const token = localStorage.getItem("id_token");
+  return {
+    headers: {
+      ...headers, 
+      authorization: token ? `Bearer ${token}` : ''
+    }
+  }
+});
+
+const client = new ApolloClient({
+  link: authLink.concat(httpLink), 
+  cache: new InMemoryCache()
+});
+
+
+
 
 function App() {
   // const navigate = useNavigate();
@@ -50,7 +78,7 @@ function App() {
   // }
 
   return (
-
+    <ApolloProvider client={client}>
     <div>
     <Preloader load={load} />
     <div className="App" id={load ? "no-scroll" : "scroll"}>
@@ -68,6 +96,7 @@ function App() {
       {/* <Footer /> */}
     </div>
     </div>
+    </ApolloProvider>
   );
   }
 
