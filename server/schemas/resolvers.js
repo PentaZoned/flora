@@ -1,5 +1,4 @@
 const { AuthenticationError } = require('apollo-server-express');
-const { ResetTvOutlined } = require('@mui/icons-material');
 const { User, Product, Category, Order } = require('../models');
 const { signToken } = require('../utils/auth');
 
