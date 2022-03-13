@@ -23,6 +23,9 @@
   },
   "devDependencies": {
     "concurrently": "^5.1.0"
+  },
+  "dependencies": {
+    "apollo-server-express": "^3.6.4",
+    "jsonwebtoken": "^8.5.1"
   }
 }
-
