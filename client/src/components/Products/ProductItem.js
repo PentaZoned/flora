@@ -133,11 +133,9 @@ export default function ProductItem(item) {
       </CardActions>
       <Collapse in={expanded} timeout="auto" unmountOnExit>
         <CardContent>
-          <Typography paragraph>Caring for Sunflowers</Typography>
+          <Typography paragraph>Details</Typography>
           <Typography paragraph>
-            While the plant is small, water around the root zone, about 3 to 4
-            inches from the plant. To protect the plant, it may help to put
-            snail or slug bait around the stem.
+            {details}
           </Typography>
         </CardContent>
       </Collapse>
