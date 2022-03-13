@@ -16,8 +16,8 @@ import FavoriteIcon from "@mui/icons-material/Favorite";
 import ShareIcon from "@mui/icons-material/Share";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import MoreVertIcon from "@mui/icons-material/MoreVert";
+import AddShoppingCartIcon from '@mui/icons-material/AddShoppingCart';
 
-import { Link } from "react-router-dom";
 import { pluralize } from "../../utils/helpers"
 import { useStoreContext } from "../../utils/GlobalState";
 import { ADD_TO_CART, UPDATE_CART_QUANTITY } from "../../utils/actions";
@@ -102,9 +102,21 @@ export default function ProductItem(item) {
         <Typography variant="body2" color="text.secondary">
         {description}
         </Typography>
+        <Typography>
+        {quantity} {pluralize("item", quantity)} in stock
+          </Typography>
+          <Typography>
+        Category: {category}
+          </Typography>
       </CardContent>
       <CardActions disableSpacing>
-        <IconButton aria-label="add to favorites">
+      <IconButton
+      onClick={addToCart}
+      aria-label="add to cart">
+          <AddShoppingCartIcon />
+        </IconButton>
+        <IconButton
+        aria-label="add to favorites">
           <FavoriteIcon />
         </IconButton>
         <IconButton aria-label="share">

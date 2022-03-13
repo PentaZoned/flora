@@ -2,7 +2,7 @@ import React, {Profiler, useEffect, useState} from 'react';
 import { Link, useParams } from 'react-router-dom';
 import {useLazyQuery, useQuery} from '@apollo/client';
 
-import Cart from 'client/src/components/pages/Cart.js';
+import Cart from './Cart.js';
 import {useStoreContext} from 'client/src/GlobalState.js';
 import {REMOVE_FROM_CART, UPDATE_CARD_QUANTITY, ADD_TO_CART, UPDATE_PRODUCTS,} from "client/src/utils/actions";
 import {QUERY_PRODUCTS} from '../utils/queries';
