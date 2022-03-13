@@ -8,15 +8,17 @@ import CardMedia from "@mui/material/CardMedia";
 import CardContent from "@mui/material/CardContent";
 import CardActions from "@mui/material/CardActions";
 import Collapse from "@mui/material/Collapse";
-import Avatar from "@mui/material/Avatar";
 import IconButton from "@mui/material/IconButton";
 import Typography from "@mui/material/Typography";
-import { red } from "@mui/material/colors";
 import FavoriteIcon from "@mui/icons-material/Favorite";
 import ShareIcon from "@mui/icons-material/Share";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import MoreVertIcon from "@mui/icons-material/MoreVert";
 import AddShoppingCartIcon from '@mui/icons-material/AddShoppingCart';
+import TextField from "@mui/material/TextField";
+import Button from "@mui/material/Button";
+import IconButton from '@mui/material/IconButton';
+
 
 import { pluralize } from "../../utils/helpers"
 import { useStoreContext } from "../../utils/GlobalState";
@@ -78,11 +80,6 @@ export default function ProductItem(item) {
   return (
     <Card sx={{ maxWidth: 345 }}>
       <CardHeader
-        avatar={
-          <Avatar sx={{ bgcolor: red[500] }} aria-label="recipe">
-            U
-          </Avatar>
-        }
         action={
           <IconButton aria-label="settings">
             <MoreVertIcon />
@@ -133,9 +130,13 @@ export default function ProductItem(item) {
       </CardActions>
       <Collapse in={expanded} timeout="auto" unmountOnExit>
         <CardContent>
-          <Typography paragraph>Details</Typography>
+          <Typography paragraph>Review</Typography>
+          <TextField id="outlined-basic" label="Review" variant="outlined" />
+          <Button variant="contained" endIcon={<SendIcon />}>
+  Send
+</Button>
           <Typography paragraph>
-            {details}
+            {/* {details} */}
           </Typography>
         </CardContent>
       </Collapse>
