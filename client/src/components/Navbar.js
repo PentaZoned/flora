@@ -2,6 +2,9 @@ import React from 'react';
 import { Container, AppBar, Toolbar, Typography, IconButton, Box, Menu, MenuItem, Button} from '@mui/material';
 import MenuIcon from '@mui/icons-material/Menu';
 import useStyles from '../styles';
+import Auth from "../../utils/auth";
+import AddShoppingCartIcon from '@mui/icons-material/AddShoppingCart';
+
 const pages = [
     {
         pageTitle: "Flora",
@@ -25,7 +28,7 @@ const pages = [
     },
 ];
 
-const Navbar = (props) => {
+function Navbar (props) {
 
     const classes = useStyles();
 
@@ -40,7 +43,24 @@ const Navbar = (props) => {
             props.handlePageChange(pageURL);
     }
 
-    return (
+
+    if (Auth.loggedIn()) {
+          return (
+            <ul className="flex-row">
+              <li className="mx-1">
+                <Link to="/orderHistory">
+                  Order History
+                </Link>
+              </li>
+              <li className="mx-1">
+                <a href="/" onClick={() => Auth.logout()}>
+                  Logout
+                </a>
+              </li>
+            </ul>
+          );
+        } else {
+          return (
         <AppBar className={classes.navStyle} position="static">
             <Container maxWidth='xl'>
                 <Toolbar disableGutters>
