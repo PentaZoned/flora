@@ -6,7 +6,7 @@ import Paper from "@mui/material/Paper";
 import Grid from "@mui/material/Grid";
 
 import React, { useEffect } from 'react';
-import ProductItem from '../ProductItem';
+import ProductItem from './ProductItem';
 import { useStoreContext } from '../../utils/GlobalState';
 import { UPDATE_PRODUCTS } from '../../utils/actions';
 import { useQuery } from '@apollo/client';
@@ -59,9 +59,19 @@ export default function ProductList() {
   return (
     <Box sx={{ flexGrow: 1 }}>
       <Grid container spacing={2}>
-        <Grid item xs={6} md={6}>
-          <Item>xs=6 md=6</Item>
-        </Grid>
+        { filterProducts().map( (product) =>(
+                    <Grid key={product._id} xs={12} sm={6} lg={4}>
+                        <Item><ProductItem
+              key={product._id}
+              _id={product._id}
+              image={product.image}
+              name={product.name}
+              price={product.price}
+              quantity={product.quantity}
+              onAddToCart={ onAddToCart }/>
+              </Item>
+      </Grid>
+      ))}
       </Grid>
     </Box>
   );

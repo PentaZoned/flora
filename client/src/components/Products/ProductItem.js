@@ -91,7 +91,7 @@ export default function ProductItem(item) {
       />
       <CardMedia
         component="img"
-        height="194"
+        height="230"
         image={`/images/${image}`}
         alt={title}
       />
