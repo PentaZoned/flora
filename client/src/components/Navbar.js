@@ -4,6 +4,7 @@ import MenuIcon from '@mui/icons-material/Menu';
 import useStyles from '../styles';
 import Auth from "../../utils/auth";
 import AddShoppingCartIcon from '@mui/icons-material/AddShoppingCart';
+import HistoryIcon from '@mui/icons-material/History';
 
 const pages = [
     {
@@ -48,10 +49,17 @@ function Navbar (props) {
           return (
             <ul className="flex-row">
               <li className="mx-1">
-                <Link to="/orderHistory">
-                  Order History
+                <Link to="/history">
+                <HistoryIcon /> Order History
                 </Link>
               </li>
+
+              <li className="mx-1">
+                <Link to="/Cart">
+                <AddShoppingCartIcon />Cart
+                </Link>
+              </li>
+
               <li className="mx-1">
                 <a href="/" onClick={() => Auth.logout()}>
                   Logout
