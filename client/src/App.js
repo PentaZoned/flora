@@ -16,7 +16,7 @@ import Navbar from "./components/Navbar";
 
 //WEBSITE PAGES
 import Home from "./components/pages/Home";
-// import Cart from "./components/pages/Cart";
+import Cart from "./components/pages/Cart";
 // import Contact from "./components/pages/Contact";
 // import Spin from "./components/pages/Spin";
 // import Login from './components/pages/Login';
@@ -69,9 +69,9 @@ function App() {
           <Navbar />
           <Routes>
             <Route path="/" element={<Home />} />
-            {/* <Route path="/Cart" element={<Cart/>} />
-        <Route path="/Contact" element={<Contact/>} />
-      <Route path="/Spin" element={<Spin/>}/> */}
+            <Route path="/Cart" element={<Cart/>} />
+        {/* <Route path="/Contact" element={<Contact/>} />
+      <Route path="/Spin" element={<Spin/>}/> */} 
             {/* <Route path="/flowers/:id" element={<Detail />} */}
             {/* <Route path="/login" element={<Login />}/> */}
             {/* <Route path="/signup" element={<Signup />}/>*/}
