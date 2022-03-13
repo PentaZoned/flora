@@ -1,7 +1,9 @@
 import React, { useState, useEffect } from "react";
 import './App.css';
-import Preloader from "../src/components/Preloader";
-import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+//import Preloader from "../src/components/Preloader";
+//import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import { Routes, Route, useNavigate } from "react-router-dom";
+
 import { ApolloClient, InMemoryCache, ApolloProvider, createHttpLink } from "@apollo/client";
 import { setContext } from 'apollo-link-context';
 
@@ -25,6 +27,8 @@ import Home from "./components/pages/Home";
 // import Signup from './components/pages/Signup';
 // import NotFound from './pages/NotFound';
 
+import Detail from "./components/pages/Detail";
+
 
 const httpLink = createHttpLink({
   uri: "/graphql"
@@ -47,28 +51,28 @@ const client = new ApolloClient({
 
 
 function App() {
+  const navigate = useNavigate();
 
-
-  // const handlePageChange = (pageURL) => {
-  //   navigate(pageURL);
-  // }
+  const handlePageChange = (pageURL) => {
+    navigate(pageURL);
+  }
 
   return (
     <ApolloProvider client={client}>
       <div>
-      <Router>
+      {/* <Router> */}
         <div>
           <Navbar />
           <Routes>
             <Route path="/" element={<Home />} />
             {/* <Route path="/Cart" element={<Cart/>} />
       <Route path="/Spin" element={<Spin/>}/> */}
-            {/* <Route path="/flowers/:id" element={<Detail />} */}
+            <Route path="/products/:productId" element={<Detail />} />
             <Route path="/login" element={<Login />}/>
             <Route path="/signup" element={<Signup />}/>
           </Routes>
         </div>
-        </Router>
+        {/* </Router> */}
       </div>
     </ApolloProvider>
   );
