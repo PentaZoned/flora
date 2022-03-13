@@ -49,18 +49,34 @@ function Detail(){
         });
     }
     return (
-        <main>
-            <div>
-                {products && products.map((product) => (
-                    <div key={product._id}>
-                        <div> {product.img}</div>
-                        <div> {product.title}</div>
-                        <div> {product.description}</div>
-                        <div> {product.price}</div>  
-                        
-                    </div>
-                ))}
-            </div>
-        </main>
+        <>
+        {currentProduct && cart ? (
+            <main>
+                <Link to="/"> Back to Product</Link>
+                <div>
+                    {products && products.map((product) => (
+                        <div key={product._id}>
+                            <div>
+                                <img
+                                    src={`${currentProduct.image}`}
+                                    alt={currentProduct.title}
+                                />
+                            </div>
+                            <div> {product.title}</div>
+                            <div> {product.description}</div>
+                            <div> {product.price}</div>  
+                            <button
+                                onClick={addToCart}>Add to Cart
+                            </button>
+                            <button
+                                onClick ={removeFromCart}> Remove 
+                            </button>
+                        </div>
+                    ))}
+                </div>
+            </main>
+         ): null}
+        </>
     )
 }
+export default Detail;
