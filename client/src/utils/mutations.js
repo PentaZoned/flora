@@ -40,9 +40,6 @@ export const ADD_USER = gql`
             password: $password
         ){
             token
-            user {
-                _id
-            }
         }
     }
 `;

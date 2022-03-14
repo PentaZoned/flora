@@ -8,8 +8,9 @@ const ProductCard = ({ products }) => {
             {products.map((product) => (
                 <Link 
                     to={`/products/${product._id}`}
+                    key={product._id}
                 >
-                    <div className='mx-5 mb-5 custom-card' key={product._id}>
+                    <div className='mx-5 mb-5 custom-card' >
                         <div className='d-flex justify-content-center'>
                             <img src={product.image} alt='A picture of a boquet of flowers' className='product-image'/>
                         </div>
