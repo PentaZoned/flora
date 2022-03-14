@@ -4,6 +4,7 @@ import { useMutation } from '@apollo/client';
 //import Auth from '../utils/auth';       
 import { ADD_USER } from '../../utils/mutations';
 import { storeValueIsStoreObject } from '@apollo/client/cache/inmemory/helpers';
+import validation from 'validation'
 
 function Signup(props) {
   const [formState, setFormState] = useState({ email: '', password: '' });
