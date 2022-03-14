@@ -97,6 +97,7 @@ const Navbar = () => {
                 key={page}
                 onClick={handleCloseNavMenu}
                 sx={{ my: 2, color: "white", display: "block" }}
+                className="hvr-wobble-vertical"
               >
                 {page}
               </Button>
