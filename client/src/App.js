@@ -10,7 +10,7 @@ import { setContext } from 'apollo-link-context';
 
 import Nav from "./components/Nav/Nav";
 import Home from './pages/Home';
-
+import SingleItem from './components/SingleItem/index';
 
 
 const httpLink = createHttpLink({
@@ -44,6 +44,10 @@ function App() {
             <Route
             path='/'
             element={<Home />}
+            />
+            <Route
+            path='/products/:id'
+            element={<SingleItem />}
             />
           </Routes>
         </div>
