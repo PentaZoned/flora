@@ -22,6 +22,8 @@ export const QUERY_SINGLE_PRODUCT = gql`
           _id
           title
           image
+          price
+          description
         }
     } 
 `;
