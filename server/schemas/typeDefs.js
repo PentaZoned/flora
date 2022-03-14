@@ -14,6 +14,7 @@ type Product {
     _id: ID
     title: String
     description: String
+    image: String
     price: Float
     category: Category
     likes: Int

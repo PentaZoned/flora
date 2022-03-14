@@ -1,6 +1,6 @@
 import React from 'react';
 import { useQuery } from '@apollo/client'
-import ProductList from '../components/ProductList/index';
+import ProductCard from '../components/ProductCard/index';
 import { QUERY_ALL_PRODUCTS } from '../utils/queries';
 
 const  Home = () => {
@@ -11,11 +11,11 @@ const  Home = () => {
   console.log(data)
 
   return (
-    <div>
+    <div className='d-flex justify-content-center'>
       {loading ? (
         <div>Loading...</div>
       ) : (
-        <ProductList
+        <ProductCard
         products={products}
         />
       )}

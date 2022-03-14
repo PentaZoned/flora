@@ -6,3 +6,17 @@
 #logo {
     margin-left: 40px;
 }
+
+.custom-sub-nav {
+    height: 40px;
+    background-color: rgb(252, 252, 252);
+    box-shadow:  0px 5px 10px 0px rgba(0, 0, 0, .1);
+    padding-right: 80px;
+}
+
+.menu-item {
+    color:rgb(112, 112, 112);
+    font-weight: 300;
+    margin-top: 5px;
+    margin-left: 15%;
+}

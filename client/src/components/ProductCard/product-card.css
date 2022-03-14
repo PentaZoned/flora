@@ -1,0 +1,25 @@
+.custom-card-container {
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin-top: 40px;
+    margin-bottom: 100px;
+    max-width: 90%;
+}
+
+.product-image {
+    width: 350px;
+}
+
+.product-title {
+    color: rgb(181, 133, 91);
+}
+
+.product-price {
+    font-weight: 200;
+    color:rgb(129, 129, 129);
+}
+
+.custom-card {
+    width: 25%;
+    max-width: 400px;
+}
