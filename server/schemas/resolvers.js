@@ -7,20 +7,8 @@ const resolvers = {
         users: async () => {
             return await User.find({});
         },
-        products: async (_parent, { category, name }) => {
-            const params = {};
-
-            if (category) {
-                params.category = category;
-            }
-
-            if (name) {
-                params.name = {
-                    $regex: name
-                };
-            }
-
-            return await Product.find(params).populate('category');
+        products: async () => {
+            return await Product.find({}).populate('category');
         },
         categories: async () => {
             return await Category.find({});

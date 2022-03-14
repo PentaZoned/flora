@@ -1,33 +1,16 @@
-import React, { useState, useEffect } from "react";
-import './App.css';
-//import Preloader from "../src/components/Preloader";
-//import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
-import { Routes, Route, useNavigate } from "react-router-dom";
-
-import { ApolloClient, InMemoryCache, ApolloProvider, createHttpLink } from "@apollo/client";
+import React from "react";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { 
+  ApolloClient,
+  InMemoryCache,
+  ApolloProvider,
+  createHttpLink
+} from "@apollo/client";
 import { setContext } from 'apollo-link-context';
 
+import Nav from "./components/Nav/Nav";
+import Home from './pages/Home';
 
-//WEBSITE COMPONENTS
-import Navbar from "./components/Navbar";
-import Login from './components/pages/Login';
-import Signup from './components/pages/Signup';
-// import Footer from './components/Footer';
-// import flowers from "./flowers";
-// import Footer from "./components/Footer";
-// import logo here
-
-
-//WEBSITE PAGES
-import Home from "./components/pages/Home";
-// import Cart from "./components/pages/Cart";
-// import Contact from "./components/pages/Contact";
-// import Spin from "./components/pages/Spin";
-// import Login from './components/pages/Login';
-// import Signup from './components/pages/Signup';
-// import NotFound from './pages/NotFound';
-
-import Detail from "./components/pages/Detail";
 
 
 const httpLink = createHttpLink({
@@ -51,29 +34,20 @@ const client = new ApolloClient({
 
 
 function App() {
-  const navigate = useNavigate();
-
-  const handlePageChange = (pageURL) => {
-    navigate(pageURL);
-  }
 
   return (
     <ApolloProvider client={client}>
-      <div>
-      {/* <Router> */}
+      <Router>
         <div>
-          <Navbar />
+          <Nav />
           <Routes>
-            <Route path="/" element={<Home />} />
-            {/* <Route path="/Cart" element={<Cart/>} />
-      <Route path="/Spin" element={<Spin/>}/> */}
-            <Route path="/products/:productId" element={<Detail />} />
-            <Route path="/login" element={<Login />}/>
-            <Route path="/signup" element={<Signup />}/>
+            <Route
+            path='/'
+            element={<Home />}
+            />
           </Routes>
         </div>
-        {/* </Router> */}
-      </div>
+      </Router>
     </ApolloProvider>
   );
 }
