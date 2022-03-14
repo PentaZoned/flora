@@ -38,11 +38,6 @@ export const ADD_USER = gql`
             lastName: $lastName
             email: $email
             password: $password
-        ){
-            token
-            user {
-                _id
-            }
-        }
+        )
     }
 `;
