@@ -15,6 +15,7 @@ type Product {
     title: String
     description: String
     price: Float
+    category: Category
     likes: Int
 }
 
@@ -40,7 +41,7 @@ type Order {
 
   type Query {
     users: [User]
-    products: [Product]
+    products(category: ID, name: String): [Product]
     categories: [Category]
     orders: [Order]
 }
