@@ -16,13 +16,11 @@ export const QUERY_ALL_PRODUCTS = gql`
     }  
 `;
 
-// export const QUERY_SINGLE_PRODUCT = gql`
-//     {
-//         query getSingleProduct($_id: ID!) {
-//             product(_id: $_id) {
-//               _id
-//               title
-//             }
-//         } 
-//     }
-// `;
+export const QUERY_SINGLE_PRODUCT = gql`
+    query getSingleProduct($_id: ID!) {
+        product(_id: $_id) {
+          _id
+          title
+        }
+    } 
+`;
