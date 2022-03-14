@@ -11,18 +11,27 @@ function Nav() {
         </div>
         <div id='nav-menu'>
           <div className='d-flex'>
-            <div className='d-flex'>
-              <img className='nav-icon' src='images/account-icon.png' alt='Account Icon'></img>
-              <h6 className='custom-nav-link'> Account</h6>
-            </div>
-            <div className='d-flex mx-5'>
-              <img className='nav-icon' src='images/cart-icon.png' alt='Account Icon'></img>
-              <h6 className='custom-nav-link'> Cart</h6>
-            </div>
-            <div className='d-flex'>
-              <img className='nav-icon' src='images/contact-icon.png' alt='Account Icon'></img>
-              <h6 className='custom-nav-link'> Contact</h6>
-            </div>
+            <Link 
+            to={`/login`}
+            >
+              
+              <div className='d-flex'>
+                <img className='nav-icon' src='images/account-icon.png' alt='Account Icon'></img>
+                <h6 className='custom-nav-link'> Account</h6>
+              </div>
+            {/* {/* </Link> */}
+            </Link>
+              <div className='d-flex mx-5'>
+                <img className='nav-icon' src='images/cart-icon.png' alt='Account Icon'></img>
+                <h6 className='custom-nav-link'> Cart</h6>
+              </div>
+            {/* </Link>
+            <Link> */}
+              <div className='d-flex'>
+                <img className='nav-icon' src='images/contact-icon.png' alt='Account Icon'></img>
+                <h6 className='custom-nav-link'> Contact</h6>
+              </div>
+            {/* </Link> */}
           </div>
         </div>
       </div>
