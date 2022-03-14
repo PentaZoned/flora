@@ -43,6 +43,7 @@ function Signup(props) {
             name="firstName"
             type="firstName"
             id="firstName"
+            value={values.firstName}
             onChange={handleChange}
           />
         </div>
@@ -53,6 +54,7 @@ function Signup(props) {
             name="lastName"
             type="lastName"
             id="lastName"
+            value={values.lastName}
             onChange={handleChange}
           />
         </div>
@@ -63,6 +65,7 @@ function Signup(props) {
             name="email"
             type="email"
             id="email"
+            value={values.email}
             onChange={handleChange}
           />
         </div>
@@ -73,11 +76,12 @@ function Signup(props) {
             name="password"
             type="password"
             id="pwd"
+            value={values.password}
             onChange={handleChange}
           />
         </div>
         <div className="flex-row flex-end">
-          <button type="submit">Submit</button>
+          <button type="submit" onClick={handleFormSubmit}>Submit</button>
         </div>
       </form>
     </div>
