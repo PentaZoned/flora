@@ -21,6 +21,7 @@ export const QUERY_SINGLE_PRODUCT = gql`
         product(_id: $_id) {
           _id
           title
+          image
         }
     } 
 `;
