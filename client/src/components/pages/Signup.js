@@ -2,7 +2,8 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { useMutation } from '@apollo/client';
 //import Auth from '../utils/auth';       
-import { ADD_USER } from '../../utils/mutations';  
+import { ADD_USER } from '../../utils/mutations';
+import { storeValueIsStoreObject } from '@apollo/client/cache/inmemory/helpers';
 
 function Signup(props) {
   const [formState, setFormState] = useState({ email: '', password: '' });
@@ -23,11 +24,10 @@ function Signup(props) {
   };
 
   const handleChange = (event) => {
-    const { name, value } = event.target;
-    setFormState({
-      ...formState,
-      [name]: value,
-    });
+    storeValueIsStoreObject({
+      ...values,
+      [event.target.name]: event.target.value,
+    })
   };
 
   return (
