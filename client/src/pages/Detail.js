@@ -1,25 +1,13 @@
-import React, {Profiler, useEffect, useState} from 'react';
-import {useParams} from "react-router-dom";
+import React from 'react';
+import { useQuery } from '@apollo/client';
+import { QUERY_SINGLE_PRODUCT } from '../utils/queries';
 
-function Detail(props){
-    const {productId} = useParams();
-    const [currentProduct, setCurrentProduct] = useState({});
+const Detail = () => {
 
-    useEffect(async () => {
-        const response = await fetch(`/api/products/${productId}`);
-        const product = await response.json();
-        setCurrentProduct(product);
-    }, []);
+    
 
-    console.log('props = ', props)
-    const product = currentProduct;
-    return (
-        <div>
-            <div>Details for {productId}</div>
-            <div>Title: {product.title}</div>
-            <div>Description: {product.description}</div>
-        </div>
-    );
+    const { loading, data } = useQuery(QUERY_SINGLE_PRODUCT);
+
 }
 
-export default Detail;
+
