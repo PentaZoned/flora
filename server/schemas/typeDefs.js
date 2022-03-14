@@ -43,6 +43,7 @@ type Order {
   type Query {
     users: [User]
     products(category: ID, name: String): [Product]
+    product(_id: ID!): Product
     categories: [Category]
     orders: [Order]
 }

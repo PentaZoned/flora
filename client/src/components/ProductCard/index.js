@@ -12,7 +12,7 @@ const ProductCard = ({ products }) => {
                     <div className='d-flex justify-content-center pt-4'>
                         <div className='flex-column'>
                             <h2 className='product-title'>{product.title}</h2>
-                            <div className='d-flex justify-content-between'>
+                            <div className='d-flex justify-content-between align-items-center'>
                             <h5 className='product-price'>{product.price}</h5>
                             <img className='rating' src='images/rating-test.png' alt='heart rating'></img>
                             </div>
