@@ -1,10 +1,9 @@
-
-  <h1 align="center">Flora</h1>
+<h1 align="center">Flora</h1>
   
 ![badge](https://img.shields.io/badge/license-MIT-blue.svg)
 
 ## Description
-This application is an online flower shopping site. It is deployed through Heroku.
+This application is an e-commerce website for purchasing flowers, cards, and other products deployed through Heroku.
 
 ## Table of Contents
 - [Description](#description)
@@ -42,7 +41,7 @@ Then open your browser and type http://localhost:3000/ to run this application o
 
 
 ## Deployed Link
-The link to the deployed application is: .
+* [See Live Site](https://guarded-river-83014.herokuapp.com/)
 
 ## Demo
 Below is the demostration of this application:
@@ -58,11 +57,18 @@ Screenshots and code snippets:
 ## Built With
 
 
-* [Javascript](https://developer.mozilla.org/en-US/docs/Web/Javascript)
-* [NodeJS](https://nodejs.org/en/)
-* [ExpressJS](https://expressjs.com/)
-* [reactjs](https://reactjs.org/)
-* [MUI](https://mui.com/)
+* [HTML](https://developer.mozilla.org/en-US/docs/Web/HTML)
+* [CSS](https://developer.mozilla.org/en-US/docs/Web/CSS)
+* [Javascript](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
+* [Javascript Web Tokens](https://jwt.io/)
+* [React](https://reactjs.org/docs/getting-started.html)
+* [Material UI](https://mui.com/)
+* [Hover.CSS](http://ianlunn.github.io/Hover/)
+* [MongoDB](https://docs.mongodb.com/)
+* [Mongoose](https://mongoosejs.com/docs/api.html)
+* [IndexedDB](https://developer.mozilla.org/en-US/docs/Web/API/IndexedDB_API)
+* [GraphQL](https://graphql.org/learn/)
+* [Apollo Server](https://www.apollographql.com/docs/apollo-server/)
   
 **[⬆ back to top](#table-of-contents)**
 
@@ -72,6 +78,19 @@ This application is licensed under MIT license.
 **[⬆ back to top](#table-of-contents)**
 
 ## Contributors
+
+### **Scott Everett** 
+
+- [Portfolio](https://scottybuoy.github.io/react-portfolio/)
+- [Github](https://github.com/scottybuoy)
+- [LinkedIn](https://www.linkedin.com/in/scott-everett-web-development/)
+  
+   
+### **Courtney Foster** 
+
+- [Portfolio](https://cfoster121.github.io/portfolio-3/)
+- [Github](https://github.com/cfoster121)
+- [LinkedIn](https://www.linkedin.com/in/courtney-foster-0b364575/)
 
 ### Baofeng Guo
 - [Link to Github](https://github.com/magickw)
@@ -92,6 +111,14 @@ and then `npm run test` from the command line.
 
 ## Questions
 For any question, please contact me on GitHub: [magickw](https://github.com/magickw).
+
+**[⬆ back to top](#table-of-contents)**
+
+## Acknowledgments
+
+* [W3 Schools](https://www.w3schools.com/)
+* [MDN Web Docs](https://developer.mozilla.org/en-US/)
+* TA sessions
 
 **[⬆ back to top](#table-of-contents)**
 
