@@ -24,6 +24,11 @@ const productSchema = new Schema(
             ref: 'Category',
             required: true,
         },
+        quantity: {
+            type: Number,
+            min: 0,
+            default: 0
+          },
         likes: {
             type: Number,
         },
