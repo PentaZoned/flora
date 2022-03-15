@@ -89,7 +89,6 @@ This application is licensed under MIT license.
 - [Github](https://github.com/scottybuoy)
 - [LinkedIn](https://www.linkedin.com/in/scott-everett-web-development/)
   
-   
 ### Courtney Foster 
 
 - [Portfolio](https://cfoster121.github.io/portfolio-3/)
@@ -103,12 +102,15 @@ This application is licensed under MIT license.
 - [LinkedIn](https://www.linkedin.com/in/man-tsang-64308b22a/)
 
 ### Baofeng Guo
+
 - [Link to Github](https://github.com/magickw)
 - [Link to LinkedIn](https://www.linkedin.com/in/bfguo/)
 
 ### Bradley Le
-- [Link to Github](https://www.github.com/plotinusspascual)
-- [Link to LinkedIn](https://www.linkedin.com/in/jose-plotinuss-pascual/)
+
+- [Portfolio](https://pentazoned.github.io/portfolio-version-3/)
+- [Github](https://github.com/PentaZoned)
+- [LinkedIn](https://www.linkedin.com/in/bradley-le-/)
 
 ## Tests
 To run tests on the application, run
