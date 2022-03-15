@@ -73,12 +73,14 @@ function Nav() {
 
   return (
     <header className='container-fluid px-0'>
-      <div className='flex-row d-flex justify-content-between align-items-center custom-nav'>
+      <div className='d-flex d-flex justify-content-between align-items-center custom-nav'>
+        <div>
         <Link
           to={`/`}
         >
           <img src='images/logo.png' alt='Flora Logo' id='logo' width='80px'></img>
         </Link>
+        </div>
         <nav>
           {showNavigation()}
         </nav>
