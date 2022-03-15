@@ -15,10 +15,14 @@ This application is an e-commerce website for purchasing flowers, cards, and oth
 - [Built With](#built-with)
 - [License](#license)
 - [Contributors](#contributors)
+  - [Scott Everett](#scott-everett)
+  - [Courtney Foster](#courtney-foster)
+  - [Mandy Tsang](#mandy-tsang)
   - [Baofeng Guo](#baofeng-guo)
   - [Bradley Le](#bradley-le)
 - [Tests](#tests)
 - [Questions](#questions)
+- [Acknowledgments](#acknowledgments)
 
 ## Installation
 `git clone` the repo to your local machine. To use this application, please run the following command:
@@ -79,18 +83,24 @@ This application is licensed under MIT license.
 
 ## Contributors
 
-### **Scott Everett** 
+### Scott Everett
 
 - [Portfolio](https://scottybuoy.github.io/react-portfolio/)
 - [Github](https://github.com/scottybuoy)
 - [LinkedIn](https://www.linkedin.com/in/scott-everett-web-development/)
   
    
-### **Courtney Foster** 
+### Courtney Foster 
 
 - [Portfolio](https://cfoster121.github.io/portfolio-3/)
 - [Github](https://github.com/cfoster121)
 - [LinkedIn](https://www.linkedin.com/in/courtney-foster-0b364575/)
+
+### Mandy Tsang
+
+- [Portfolio](https://mandytsang007.github.io/new-portfolio/)
+- [Github](https://github.com/MANDYTSANG007)
+- [LinkedIn](https://www.linkedin.com/in/man-tsang-64308b22a/)
 
 ### Baofeng Guo
 - [Link to Github](https://github.com/magickw)
