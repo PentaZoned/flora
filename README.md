@@ -15,8 +15,9 @@ This application is an online flower shopping site. It is deployed through Herok
 - [Demo](#demo)
 - [Built With](#built-with)
 - [License](#license)
-- [Contributing](#contributing)
+- [Contributors](#contributors)
   - [Baofeng Guo](#baofeng-guo)
+  - [Bradley Le](#bradley-le)
 - [Tests](#tests)
 - [Questions](#questions)
 
@@ -70,12 +71,15 @@ This application is licensed under MIT license.
 
 **[⬆ back to top](#table-of-contents)**
 
-## Contributing
-This application is developed by the following contributors:
+## Contributors
 
 ### Baofeng Guo
+- [Link to Github](https://github.com/magickw)
+- [Link to LinkedIn](https://www.linkedin.com/in/bfguo/)
 
-**[⬆ back to top](#table-of-contents)**
+### Bradley Le
+- [Link to Github](https://www.github.com/plotinusspascual)
+- [Link to LinkedIn](https://www.linkedin.com/in/jose-plotinuss-pascual/)
 
 ## Tests
 To run tests on the application, run
