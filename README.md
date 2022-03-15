@@ -69,9 +69,9 @@ When the user arrives to the home page, all products are displayed. There is a n
     
 ### **Mandy Tsang** 
 
-- [Link to Portfolio Site](https://mandytsang007.github.io/new-portfolio/)
-- [Link to Github](https://github.com/MANDYTSANG007)
-- [Link to LinkedIn](https://www.linkedin.com/in/mandy-tsang-896b2682/)
+- [Portfolio](https://mandytsang007.github.io/new-portfolio/)
+- [Github](https://github.com/MANDYTSANG007)
+- [LinkedIn](https://www.linkedin.com/in/man-tsang-64308b22a/)
 
 
 ## License
