@@ -12,6 +12,7 @@ function Nav() {
             <div className="mx-5 inline">
               <Link
                 to={`/profile`}
+                className='hvr-wobble-vertical'
               >
                 <img className='nav-icon' src='images/account-icon.png' alt='Account Icon'></img>
                 <h6 className='custom-nav-link'> Account</h6>
@@ -21,6 +22,7 @@ function Nav() {
             <div className="mx-5 inline">
               <Link
                 to={`/cart`}
+                className='hvr-wobble-vertical'
               >
                 <img className='nav-icon' src='images/cart-icon.png' alt='Account Icon'></img>
                 <h6 className='custom-nav-link'> Cart</h6>
@@ -31,6 +33,7 @@ function Nav() {
               <div className="mx-5 inline">
               <Link
                 to={`/logout`}
+                className='hvr-wobble-vertical'
               >
                 <img className='nav-icon' src='images/logout-icon.png' alt='Account Icon'></img>
                 <h6 className='custom-nav-link' href="/" onClick={() => Auth.logout()}> Logout</h6>
@@ -47,6 +50,7 @@ function Nav() {
             <div className="mx-5 inline">
               <Link
                 to={`/cart`}
+                className='hvr-wobble-vertical'
               >
                 <img className='nav-icon' src='images/cart-icon.png' alt='Account Icon'></img>
                 <h6 className='custom-nav-link'> Cart</h6>
@@ -58,6 +62,7 @@ function Nav() {
               <div className="mx-5 inline">
                 <Link
                 to={`/login`}
+                className='hvr-wobble-vertical'
               >
                 <img className='nav-icon' src='images/login-icon.png' alt='Account Icon'></img>
                 <h6 className='custom-nav-link'> Login</h6>
@@ -69,6 +74,7 @@ function Nav() {
               <div className="mx-5 inline">
                 <Link
                 to={`/signup`}
+                className='hvr-wobble-vertical'
               >
                 <img className='nav-icon' src='images/signup-icon.png' alt='Account Icon'></img>
                 <h6 className='custom-nav-link'> Sign Up</h6>
