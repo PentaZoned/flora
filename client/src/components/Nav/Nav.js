@@ -9,7 +9,7 @@ function Nav() {
       return (
         <div id='nav-menu'>
             <div className="d-flex">
-            <div className="mx-5 inline">
+            <div className="mx-5 block">
               <Link
                 to={`/profile`}
               >
@@ -18,7 +18,7 @@ function Nav() {
               </Link>
             </div>
 
-            <div className="mx-5 inline">
+            <div className="mx-5 block">
               <Link
                 to={`/cart`}
               >
@@ -28,7 +28,7 @@ function Nav() {
               </div>
 
 
-              <div className="mx-5 inline">
+              <div className="mx-5 block">
               <Link
                 to={`/logout`}
               >
@@ -44,7 +44,7 @@ function Nav() {
       return (
         <div id='nav-menu'>
             <div className="d-flex">
-            <div className="mx-5 inline">
+            <div className="mx-5 block">
               <Link
                 to={`/cart`}
               >
@@ -55,7 +55,7 @@ function Nav() {
     
 
 
-              <div className="mx-5 inline">
+              <div className="mx-5 block">
                 <Link
                 to={`/login`}
               >
@@ -66,7 +66,7 @@ function Nav() {
 
 
 
-              <div className="mx-5 inline">
+              <div className="mx-5 block">
                 <Link
                 to={`/signup`}
               >

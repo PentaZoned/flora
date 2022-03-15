@@ -9,6 +9,10 @@ import FavoriteIcon from '@mui/icons-material/Favorite';
 import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
 import Button from '@mui/material/Button';
 
+import CssBaseline from "@mui/material/CssBaseline";
+import Box from "@mui/material/Box";
+import Container from "@mui/material/Container";
+
 const StyledRating = styled(Rating)({
     '& .MuiRating-iconFilled': {
         color: '#ff6d75',
@@ -33,6 +37,10 @@ const SingleItem = () => {
     }
 
     return (
+        <React.Fragment>
+      <CssBaseline />
+      <Container maxWidth="sm">
+        <Box sx={{ bgcolor: "white", height: "5vh" }} />
         <div style={{
             display: "block",
             justifyContent: "center"
@@ -58,6 +66,8 @@ const SingleItem = () => {
             </p>
 
         </div>
+        </Container>
+    </React.Fragment>
     );
 };
 
