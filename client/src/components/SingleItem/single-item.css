@@ -1,0 +1,21 @@
+.single-product {
+    width: 400px;
+    margin-top: 30px;
+}
+
+.single-item-button {
+    border-radius: 10px;
+    border-style: none;
+    background-color: rgb(150, 184, 194);
+    color: white;
+    padding: 8px;
+}
+
+.back {
+    margin: 40px;
+}
+
+.link {
+    text-decoration: none;
+    color:rgb(134, 134, 134);
+}

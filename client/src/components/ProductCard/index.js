@@ -74,7 +74,7 @@ const ProductCard = ({ products }) => {
                                     icon={<FavoriteIcon fontSize="inherit" />}
                                     emptyIcon={<FavoriteBorderIcon fontSize="inherit" />}
                                 />
-                                <p className='product-likes'>{product.likes} likes</p>
+                                {/* <p className='product-likes'>{product.likes} likes</p> */}
                                 
                             </div>
                         </div>

@@ -2,6 +2,7 @@
     background-color: rgb(245, 245, 245);
     padding: 20px;
     margin-bottom: 50px;
+    padding-left: 100px;
 }
 
 .cart-container {
@@ -22,7 +23,7 @@
 }
 
 .product-price-cart {
-    color:rgb(113, 197, 218);
+    color: rgb(113, 197, 218);
 
 }
 

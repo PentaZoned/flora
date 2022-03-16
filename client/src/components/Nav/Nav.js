@@ -18,7 +18,7 @@ function Nav() {
         </div>
         <div id='nav-menu'>
           <div className='d-flex'>
-            <Link 
+            <Link className='link'
             to={`/login`}
             >
               
@@ -28,7 +28,7 @@ function Nav() {
               </div>
             {/* {/* </Link> */}
             </Link>
-            <Link
+            <Link className='link'
             to={`/${userId}/cart`}
             >
               <div className='d-flex mx-5'>
@@ -47,11 +47,10 @@ function Nav() {
         </div>
       </div>
       <div className='d-flex align-items-center justify-content-end custom-sub-nav'>
-        
-        {/* <h5 className='menu-item'>Flowers</h5>
+        <h5 className='menu-item'>Flowers</h5>
         <h5 className='menu-item'>Plants</h5>
         <h5 className='menu-item'>Cards</h5>
-        <h5 className='menu-item'>SALE</h5> */}
+        <h5 className='menu-item'>SALE</h5>
       </div>
     </div>
   )
