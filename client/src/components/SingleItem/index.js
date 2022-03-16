@@ -46,10 +46,6 @@ const SingleItem = () => {
         return <div>Loading...</div>;
     }
 
-    const title = product.title;
-    console.log(`********PRODUCT ID:${id}*************`);
-
-
     return (
         <div style={{
             display: "block",
@@ -63,7 +59,14 @@ const SingleItem = () => {
                 <button
                 type='button'
                 onClick={() => {
-                    addToCart(id)
+                    addToCart(
+                        {
+                            _id: product._id,
+                            title: product.title,
+                            image: product.image,
+                            description: product.description,
+                            price: product.price,
+                        })
                 }}
                 >
                 Add to Cart

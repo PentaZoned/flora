@@ -18,7 +18,7 @@ const Cart = () => {
     }
 
     return (
-        <div>
+        <div className='d-flex justify-content-center'>
           {loading ? (
             <div>Loading...</div>
           ) : (

@@ -1,6 +1,7 @@
 import React from 'react';
 import './product-card.css';
 import { Link } from 'react-router-dom';
+import { useCartContext } from '../../utils/GlobalState';
 
 import { styled } from '@mui/material/styles';
 import Rating from '@mui/material/Rating';
@@ -18,11 +19,11 @@ const StyledRating = styled(Rating)({
     },
 });
 
-// function likesHandler (){
-
-// }
 
 const ProductCard = ({ products }) => {
+
+    const { cart, addToCart } = useCartContext();
+
     return (
         <div className='d-flex justify-content-center custom-card-container'>
             {products.map((product) => (
@@ -46,7 +47,20 @@ const ProductCard = ({ products }) => {
                             </Link>
                             <div className='d-flex justify-content-between align-items-center'>
                                 <h5 className='product-price'>Price: ${product.price}</h5>
-                                <Button variant="contained">Add to cart</Button>
+                                <Button variant="contained"
+                                    onClick={() => {
+                                        addToCart(
+                                            {
+                                                _id: product._id,
+                                                title: product.title,
+                                                image: product.image,
+                                                description: product.description,
+                                                price: product.price,
+                                            })
+                                    }}
+                                >
+                                Add to cart
+                                </Button>
                             </div>
                             <div className='d-flex justify-content-between align-items-center'>
                                 {/* <img className='rating' src='images/rating-test.png' alt='heart rating'></img> */}
