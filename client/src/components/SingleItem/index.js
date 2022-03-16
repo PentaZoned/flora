@@ -2,6 +2,7 @@ import React from 'react';
 import { useParams } from 'react-router-dom';
 import { useQuery } from '@apollo/client';
 import { QUERY_SINGLE_PRODUCT } from '../../utils/queries';
+import { Link } from 'react-router-dom';
 
 import { styled } from '@mui/material/styles';
 import Rating from '@mui/material/Rating';
@@ -40,6 +41,7 @@ const SingleItem = () => {
         <React.Fragment>
       <CssBaseline />
       <Container maxWidth="sm">
+      <Link to="/">← Go back Home</Link>
         <Box sx={{ bgcolor: "white", height: "5vh" }} />
         <div style={{
             display: "block",
