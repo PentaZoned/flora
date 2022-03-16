@@ -22,12 +22,20 @@ const StyledRating = styled(Rating)({
 
 // }
 
+const addToCart = (event) => {
+    const productId = event.target.getAttribute('data-product-id');
+    const currentContents = JSON.parse(localStorage.getItem('cart') || '[]');
+    const newContents = [...currentContents];
+    newContents.push(productId);
+    localStorage.setItem('cart', JSON.stringify(newContents));
+}
+
 const ProductCard = ({ products }) => {
     return (
         <div className='d-flex justify-content-center custom-card-container'>
             {products.map((product) => (
 
-                <div className='mx-5 mb-5 custom-card' >
+                <div className='mx-5 mb-5 custom-card' key={product._id}>
                     <div className='d-flex justify-content-center'>
                         <Link
                             to={`/products/${product._id}`}
@@ -46,7 +54,7 @@ const ProductCard = ({ products }) => {
                             </Link>
                             <div className='d-flex justify-content-between align-items-center'>
                                 <h5 className='product-price'>Price: ${product.price}</h5>
-                                <Button variant="contained">Add to cart</Button>
+                                <Button variant="contained" data-product-id={product._id} onClick={addToCart}>Add to cart</Button>
                             </div>
                             <div className='d-flex justify-content-between align-items-center'>
                                 {/* <img className='rating' src='images/rating-test.png' alt='heart rating'></img> */}
