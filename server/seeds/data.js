@@ -71,6 +71,7 @@ const users = [
         lastName: 'Lionni',
         email: 'frederick@aol.com',
         password: '4fieldMice',
+        cart: []
     },
     {
         firstName: 'Fyodor',

@@ -43,3 +43,13 @@ export const ADD_USER = gql`
         }
     }
 `;
+
+export const ADD_TO_CART = gql`
+    mutation addToCart($cart: [ID]!){
+        addToCart(cart: $cart) {
+            cart {
+                _id
+            }
+        }
+    }
+`;
