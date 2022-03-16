@@ -16,10 +16,6 @@ import Button from '@mui/material/Button';
 import Auth from '../../utils/Auth';
 import { useCartContext } from '../../utils/GlobalState';
 
-import CssBaseline from "@mui/material/CssBaseline";
-import Box from "@mui/material/Box";
-import Container from "@mui/material/Container";
-
 const StyledRating = styled(Rating)({
     '& .MuiRating-iconFilled': {
         color: '#ff6d75',
