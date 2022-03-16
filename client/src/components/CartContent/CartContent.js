@@ -26,7 +26,7 @@ const CartContent = ({ user }) => {
     console.log(cart);
     
     return (
-        <div className='row'>
+        <div className='row mx-5'>
             <div className='col-12 col-lg-7'>
             {cart.map((product) => (
                 <div>
@@ -75,6 +75,26 @@ const CartContent = ({ user }) => {
                         <p>{item.price}</p>
                     </div>
                 ))}
+                    <hr></hr>
+                    <div className='d-flex justify-content-between'>
+                        <h5>Subtotal:</h5>
+                        <h5>{`$${sum}`}</h5>
+                    </div>
+                    <hr></hr>
+                    <div className='d-flex justify-content-between'>
+                        <button
+                            className='continue-btn'
+                            type='button'
+                        >
+                            Continue Shopping
+                        </button>
+                        <button
+                            className='proceed-btn'
+                            
+                        >
+                            Proceed to Checkout
+                        </button>
+                    </div>
                 </div>
             </div>
             ) : (

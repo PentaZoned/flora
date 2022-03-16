@@ -3,6 +3,7 @@ import { useParams } from 'react-router-dom';
 import { useQuery } from '@apollo/client';
 import { QUERY_USER } from '../utils/queries';
 import CartContent from '../components/CartContent/CartContent';
+import '../components/CartContent/cart-content.css';
 
 const Cart = () => {
     const { userId } = useParams();
@@ -18,16 +19,16 @@ const Cart = () => {
     }
 
     return (
-        <div >
+        <div id='cart-container' >
           {/* {loading ? (
             <div>Loading...</div>
           ) : (
             
             <CartContent
             user={user}
-            />
+            />s
           )} */}
-          <h1>Cart</h1>
+          <h1 className='cart-title'>Cart</h1>
           <div className='container-fluid'>
             <CartContent></CartContent>
           </div>

@@ -1,3 +1,13 @@
+.cart-title {
+    background-color: rgb(245, 245, 245);
+    padding: 20px;
+    margin-bottom: 50px;
+}
+
+.cart-container {
+    margin-top: 100px;
+}
+
 .prod-image {
     width: 120px;
 }
@@ -8,11 +18,12 @@
 }
 
 .product-title-cart {
-    
+    color:rgb(73, 73, 73);
 }
 
 .product-price-cart {
     color:rgb(113, 197, 218);
+
 }
 
 .cart-btn {
@@ -48,4 +59,22 @@
     padding: 35px;
     margin: 0px 40px 0px 40px;
     border-radius: 6px;
+}
+
+.continue-btn {
+    border-style: none;
+    border-radius: 10px 0px 0px 10px;
+    color: white;
+    background-color: rgb(139, 177, 202);
+    padding: 15px;
+    width: 40%;
+}
+
+.proceed-btn {
+    border-style: none;
+    border-radius: 0px 10px 10px 0px;
+    color: white;
+    background-color: rgb(196, 109, 71);
+    padding: 15px;
+    width:60%;
 }

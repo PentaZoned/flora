@@ -31,6 +31,7 @@ const ProductCard = ({ products }) => {
                 <div className='mx-5 mb-5 custom-card' >
                     <div className='d-flex justify-content-center'>
                         <Link
+                            className='link'
                             to={`/products/${product._id}`}
                             key={product._id}
                         >
@@ -40,6 +41,7 @@ const ProductCard = ({ products }) => {
                     <div className='d-flex justify-content-center pt-4'>
                         <div className='flex-column'>
                             <Link
+                                className='link'
                                 to={`/products/${product._id}`}
                                 key={product._id}
                             >
