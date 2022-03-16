@@ -20,13 +20,23 @@ export const CartProvider = ({ children }) => {
         };
     };
 
+    const removeFromCart = (itemId) => {
+        const updatedCart = cart.filter(product => 
+            product._id !== itemId
+        );
+        console.log('UPDATE');
+        console.log(updatedCart);
+        setCart(updatedCart);
+    };
+
     const emptyCart = () => {
         setCart([]);
     }
 
+
     return (
         <CartContext.Provider
-            value={{ cart, addToCart, emptyCart }}
+            value={{ cart, addToCart, emptyCart, removeFromCart }}
         >
             {/* Give children of provider access to global state */}
             { children }

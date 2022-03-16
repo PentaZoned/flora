@@ -18,14 +18,19 @@ const Cart = () => {
     }
 
     return (
-        <div className='d-flex justify-content-center'>
-          {loading ? (
+        <div >
+          {/* {loading ? (
             <div>Loading...</div>
           ) : (
+            
             <CartContent
             user={user}
             />
-          )}
+          )} */}
+          <h1>Cart</h1>
+          <div className='container-fluid'>
+            <CartContent></CartContent>
+          </div>
         </div>
     )
 };
