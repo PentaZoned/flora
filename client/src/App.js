@@ -13,6 +13,7 @@ import Home from './pages/Home';
 import SingleItem from './components/SingleItem/index';
 import Login from './pages/Login';
 import Signup from './pages/Signup';
+import Cart from './components/Cart';
 
 const httpLink = createHttpLink({
   uri: "/graphql"
@@ -57,6 +58,10 @@ function App() {
             <Route
             path='/signup'
             element={<Signup />}
+            />
+             <Route
+            path='/cart'
+            element={<Cart contents={JSON.parse(localStorage.getItem("cart") || [])} />}
             />
           </Routes>
         </div>
