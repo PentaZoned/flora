@@ -1,4 +1,5 @@
 const { AuthenticationError } = require('apollo-server-express');
+const { async } = require('regenerator-runtime');
 const { User, Product, Category, Order } = require('../models');
 const { signToken } = require('../utils/auth');
 
@@ -6,6 +7,9 @@ const resolvers = {
     Query: {
         users: async () => {
             return await User.find({});
+        },
+        user: async(_parent, { _id }) => {
+            return await User.findById(_id).populate('cart');
         },
         products: async () => {
             return await Product.find({}).populate('category');
@@ -18,7 +22,7 @@ const resolvers = {
         },
         orders: async () => {
             return await Order.find({}).populate('products');
-        }
+        },
 
     },
     Mutation: {
@@ -37,6 +41,20 @@ const resolvers = {
             }
 
             throw new AuthenticationError('Not logged in');
+        },
+        addToCart: async (_parent, { cart }, context) => {
+            if (context.user) {
+                const user = await User.findOneAndUpdate(
+                    { _id: context.user._id},
+                    { $push: { cart: cart},
+                },
+                {
+                    new: true,
+                    runValidators: true,
+                }
+                    );
+                return user;
+            }
         },
         login: async (_parent, { email, password }) => {
             const user = await User.findOne({ email });

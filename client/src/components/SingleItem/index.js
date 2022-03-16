@@ -1,13 +1,18 @@
 import React from 'react';
+import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { useQuery } from '@apollo/client';
+import { useMutation } from '@apollo/client';
 import { QUERY_SINGLE_PRODUCT } from '../../utils/queries';
+import AuthService from '../../utils/Auth';
 
 import { styled } from '@mui/material/styles';
 import Rating from '@mui/material/Rating';
 import FavoriteIcon from '@mui/icons-material/Favorite';
 import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
 import Button from '@mui/material/Button';
+import Auth from '../../utils/Auth';
+import { useCartContext } from '../../utils/GlobalState';
 
 const StyledRating = styled(Rating)({
     '& .MuiRating-iconFilled': {
@@ -18,7 +23,16 @@ const StyledRating = styled(Rating)({
     },
 });
 
+
+const userId = AuthService.getProfile().data._id;
+
+console.log(`*******USER ID:${userId}***********`);
+
 const SingleItem = () => {
+
+    const { cart, addToCart, emptyCart } = useCartContext();
+    console.log('*****THIS IS THE CART******')
+    console.log(cart);
 
     const { id } = useParams();
 
@@ -32,6 +46,10 @@ const SingleItem = () => {
         return <div>Loading...</div>;
     }
 
+    const title = product.title;
+    console.log(`********PRODUCT ID:${id}*************`);
+
+
     return (
         <div style={{
             display: "block",
@@ -42,7 +60,14 @@ const SingleItem = () => {
                 {product.title}
             </h2>
                 <h3 className='product-price'>Price: ${product.price}</h3>
-                <Button variant="contained">Add to cart</Button>
+                <button
+                type='button'
+                onClick={() => {
+                    addToCart(id)
+                }}
+                >
+                Add to Cart
+                </button>
             <p>
                 {product.description}
             </p>
