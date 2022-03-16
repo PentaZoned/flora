@@ -22,6 +22,15 @@ const StyledRating = styled(Rating)({
     },
 });
 
+const addToCart = (event) => {
+    const productId = event.target.getAttribute('data-product-id');
+    const currentContents = JSON.parse(localStorage.getItem('cart') || '[]');
+    const newContents = [...currentContents];
+    newContents.push(productId);
+    localStorage.setItem('cart', JSON.stringify(newContents));
+}
+
+
 const SingleItem = () => {
 
     const { id } = useParams();
@@ -50,7 +59,7 @@ const SingleItem = () => {
                 {product.title}
             </h2>
                 <h3 className='product-price'>Price: ${product.price}</h3>
-                <Button variant="contained">Add to cart</Button>
+                <Button data-product="{{product._id}}" data-product-id={product._id} data-action="add" variant="contained" onClick={addToCart}>Add to cart</Button> 
             <p>
                 {product.description}
             </p>
