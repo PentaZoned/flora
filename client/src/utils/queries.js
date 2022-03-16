@@ -27,3 +27,19 @@ export const QUERY_SINGLE_PRODUCT = gql`
         }
     } 
 `;
+
+export const QUERY_USER = gql`
+    query user($_id: ID!) {
+        user(_id: $_id) {
+            _id
+            firstName
+            lastName
+            email
+            cart {
+                title
+                description
+                image
+            }
+        }
+    }
+`;

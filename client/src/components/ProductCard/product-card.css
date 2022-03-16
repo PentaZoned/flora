@@ -1,3 +1,8 @@
+.link {
+    text-decoration: none;
+    
+}
+
 .custom-card-container {
     flex-direction: row;
     flex-wrap: wrap;

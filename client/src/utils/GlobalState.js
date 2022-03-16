@@ -1,24 +1,45 @@
-import React, { createContext, useContext } from "react";
-import { useProductReducer } from './reducers'
+import React, { createContext, useContext, useState } from 'react';
 
-const StoreContext = createContext();
-const { Provider } = StoreContext;
+// Initialize new context for cart
+const CartContext = createContext();
 
-const StoreProvider = ({ value = [], ...props }) => {
-  const [state, dispatch] = useProductReducer({
-    products: [],
-    cart: [],
-    cartOpen: false,
-    categories: [],
-    currentCategory: '',
-  });
+// Custom hook to provide immediate usage of cart context to other components
+export const useCartContext = () => useContext(CartContext);
 
-  return <Provider value={[state, dispatch]} {...props} />;
+// Provider, responsible to creating and updating global state and persisting values to children
+export const CartProvider = ({ children }) => {
+    const [cart, setCart] = useState([]);
+
+    const addToCart = (product) => {
+
+        // Update state of cart by adding new item to array of existing items
+        if (!cart[0]) {
+            setCart([product]);
+        } else {
+        setCart([...cart, product]);
+        };
+    };
+
+    const removeFromCart = (itemId) => {
+        const updatedCart = cart.filter(product => 
+            product._id !== itemId
+        );
+        console.log('UPDATE');
+        console.log(updatedCart);
+        setCart(updatedCart);
+    };
+
+    const emptyCart = () => {
+        setCart([]);
+    }
+
+
+    return (
+        <CartContext.Provider
+            value={{ cart, addToCart, emptyCart, removeFromCart }}
+        >
+            {/* Give children of provider access to global state */}
+            { children }
+        </CartContext.Provider>
+    );
 };
-
-const useStoreContext = () => {
-  return useContext(StoreContext);
-};
-
-export { StoreProvider, useStoreContext };
-//
