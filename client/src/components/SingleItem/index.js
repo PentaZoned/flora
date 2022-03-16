@@ -98,8 +98,6 @@ const SingleItem = () => {
                 </div>
             </div>
         </div>
-        </Container>
-    </React.Fragment>
     );
 };
 
