@@ -26,7 +26,14 @@ const StyledRating = styled(Rating)({
 });
 
 
-const userId = AuthService.getProfile().data._id;
+//const userId = AuthService.getProfile().data._id;
+let userId = null;
+try {
+  const profile = AuthService.getProfile();
+  if (profile)
+    userId = profile.data._id;
+} catch (error) {
+}
 
 console.log(`*******USER ID:${userId}***********`);
 

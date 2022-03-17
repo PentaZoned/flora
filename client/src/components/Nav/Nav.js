@@ -3,7 +3,13 @@ import { Link } from 'react-router-dom';
 import './nav.css';
 import AuthService from '../../utils/Auth';
 
-const userId = AuthService.getProfile().data._id;
+let userId = null;
+try {
+  const profile = AuthService.getProfile();
+  if (profile)
+    userId = profile.data._id;
+} catch (error) {
+}
 
 function Nav() {
   return (
@@ -28,6 +34,7 @@ function Nav() {
               </div>
             {/* {/* </Link> */}
             </Link>
+            { userId ? (
             <Link className='link'
             to={`/${userId}/cart`}
             >
@@ -35,9 +42,8 @@ function Nav() {
                 <img className='nav-icon' src='images/cart-icon.png' alt='Account Icon'></img>
                 <h6 className='custom-nav-link'> Cart</h6>
               </div>
-            {/* </Link>
-            <Link> */}
             </Link>
+            ) : null}
               <div className='d-flex'>
                 <img className='nav-icon' src='images/contact-icon.png' alt='Account Icon'></img>
                 <h6 className='custom-nav-link'> Contact</h6>
