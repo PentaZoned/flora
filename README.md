@@ -49,11 +49,14 @@ Then open your browser and type http://localhost:3000/ to run this application o
 
 ## Demo
 Below is the demostration of this application:
-<img src="demo/demo.gif" alt="demo" />
+
+![Demonstration](/screenshots/flora.gif)
 
 Screenshots and code snippets:
 
+![Home Page](/screenshots/home.jpg)
 
+![Login Page](/screenshots/login.jpg)
 
 
 **[⬆ back to top](#table-of-contents)**
