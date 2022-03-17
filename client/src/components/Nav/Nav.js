@@ -55,11 +55,10 @@ function Nav() {
         <div id='nav-menu'>
             <div className="d-flex">
             <div className="mx-5 inline">
-            <Link className='link'
+            <Link
             to={`/${userId}/cart`}
              className='hvr-wobble-vertical'
             >
-              <div className='d-flex mx-5'>
                 <img className='nav-icon' src='images/cart-icon.png' alt='Account Icon'></img>
                 <h6 className='custom-nav-link'> Cart</h6>
               </Link>
