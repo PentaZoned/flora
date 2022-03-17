@@ -1,11 +1,19 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import './nav.css';
-import Auth from "../../utils/Auth";
+import AuthService from '../../utils/Auth';
+
+let userId = null;
+try {
+  const profile = AuthService.getProfile();
+  if (profile)
+    userId = profile.data._id;
+} catch (error) {
+}
 
 function Nav() {
   function showNavigation() {
-    if (Auth.loggedIn()) {
+    if (AuthService.loggedIn()) {
       return (
         <div id='nav-menu'>
             <div className="d-flex">
@@ -21,7 +29,7 @@ function Nav() {
 
             <div className="mx-5 inline">
               <Link
-                to={`/cart`}
+                to={`/${userId}/cart`}
                 className='hvr-wobble-vertical'
               >
                 <img className='nav-icon' src='images/cart-icon.png' alt='Account Icon'></img>
@@ -29,14 +37,13 @@ function Nav() {
               </Link>
               </div>
 
-
               <div className="mx-5 inline">
               <Link
                 to={`/logout`}
                 className='hvr-wobble-vertical'
               >
                 <img className='nav-icon' src='images/logout-icon.png' alt='Account Icon'></img>
-                <h6 className='custom-nav-link' href="/" onClick={() => Auth.logout()}> Logout</h6>
+                <h6 className='custom-nav-link' href="/" onClick={() => AuthService.logout()}> Logout</h6>
               </Link>
               </div>
             </div>
@@ -48,15 +55,15 @@ function Nav() {
         <div id='nav-menu'>
             <div className="d-flex">
             <div className="mx-5 inline">
-              <Link
-                to={`/cart`}
-                className='hvr-wobble-vertical'
-              >
+            <Link className='link'
+            to={`/${userId}/cart`}
+             className='hvr-wobble-vertical'
+            >
+              <div className='d-flex mx-5'>
                 <img className='nav-icon' src='images/cart-icon.png' alt='Account Icon'></img>
                 <h6 className='custom-nav-link'> Cart</h6>
               </Link>
               </div>
-    
 
 
               <div className="mx-5 inline">
@@ -68,7 +75,6 @@ function Nav() {
                 <h6 className='custom-nav-link'> Login</h6>
               </Link>
               </div>
-
 
 
               <div className="mx-5 inline">

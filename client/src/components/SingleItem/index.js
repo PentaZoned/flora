@@ -3,6 +3,7 @@ import { useParams } from 'react-router-dom';
 import { useQuery } from '@apollo/client';
 import { QUERY_SINGLE_PRODUCT } from '../../utils/queries';
 import { Link } from 'react-router-dom';
+import AuthService from '../../utils/Auth';
 
 import { styled } from '@mui/material/styles';
 import Rating from '@mui/material/Rating';
@@ -22,6 +23,18 @@ const StyledRating = styled(Rating)({
         color: '#ff3d47',
     },
 });
+
+
+//const userId = AuthService.getProfile().data._id;
+let userId = null;
+try {
+  const profile = AuthService.getProfile();
+  if (profile)
+    userId = profile.data._id;
+} catch (error) {
+}
+
+console.log(`*******USER ID:${userId}***********`);
 
 const SingleItem = () => {
 
