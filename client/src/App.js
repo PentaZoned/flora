@@ -13,8 +13,6 @@ import Home from './pages/Home';
 import SingleItem from './components/SingleItem/index';
 import Login from './pages/Login';
 import Signup from './pages/Signup';
-import Cart from './pages/Cart';
-import { CartProvider } from './utils/GlobalState';
 
 const httpLink = createHttpLink({
   uri: "/graphql"
@@ -42,32 +40,25 @@ function App() {
     <ApolloProvider client={client}>
       <Router>
         <div>
-          {/* Provider wraps all logic that handles and updates state */}
-          <CartProvider>
-            <Nav />
-            <Routes>
-              <Route
-              path='/'
-              element={<Home />}
-              />
-              <Route
-              path='/products/:id'
-              element={<SingleItem />}
-              />
-              <Route
-              path='/login'
-              element={<Login />}
-              />
-              <Route
-              path='/signup'
-              element={<Signup />}
-              />
-              <Route
-              path='/:userId/cart'
-              element={<Cart />}
-              />
+          <Nav />
+          <Routes>
+            <Route
+            path='/'
+            element={<Home />}
+            />
+            <Route
+            path='/products/:id'
+            element={<SingleItem />}
+            />
+            <Route
+            path='/login'
+            element={<Login />}
+            />
+            <Route
+            path='/signup'
+            element={<Signup />}
+            />
           </Routes>
-          </CartProvider>
         </div>
       </Router>
     </ApolloProvider>
